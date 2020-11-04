@@ -1,0 +1,333 @@
+@import "../../variables";
+
+.data-table{
+    margin-top: 30px;
+    padding: 0 20px;
+    border-radius: 3px;
+    background-color: $bg_white_light;
+
+    .table-header{
+        padding: 15px 0 0;
+
+        .lable{
+            margin-bottom: 15px;
+            font-size: 14px;
+            font-weight: bold;
+            color: $font_dark_gray;
+        }
+
+        .actions{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+
+            .pagination{
+                display: flex;
+                align-items: center;
+
+                span{
+                    font-size: 14px;
+                    font-weight: normal;
+                    color: $font_dark_gray;
+                    opacity: .6;
+                }
+
+                input{
+                    width: 60px;
+                    height: 30px;
+                    margin: 0 5px;
+                    padding: 0 15px 0 8px;
+                    border: solid 1px $border_grey_dark;
+                    border-radius: 3px;
+                    outline: none;
+                }
+            }
+
+            .buttons{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .btn{
+                height: 30px;
+                display: flex;
+                align-items: center;
+                margin-left: 20px;
+                padding: 0 14px;
+                border-radius: 3px;
+                cursor: pointer;
+                
+                &:first-child{
+                    margin-left: 0;
+                }
+
+                img{
+                    width: 12px;
+                    height: 12px;
+                }
+
+                span{
+                    margin-left: 6px;
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: $bg_white_light
+                }
+
+                &.blue{
+                    background-color: $primary_dark_blue;
+                }
+
+                &.brown{
+                    background-color: $primary_brown;
+                }
+
+                &.red{
+                    background-color: $primary_red;
+                }
+
+                &.yellow{
+                    background-color: $primary_yellow;
+                    
+                    span{
+                        color: $font_dark_gray;
+                    }
+                }
+            }
+        }
+    }
+
+    .table-footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 27px 0;
+
+        .pagination-info{
+            p{
+                font-size: 14px;
+                font-weight: normal;
+                color: $font_dark_gray;
+            }
+        }
+
+        .pages{
+            height: 34px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid $border_gray_light;
+
+            .btn{
+                display: flex;
+                align-items: center;
+                padding: 0 13px;
+                font-size: 14px;
+                font-weight: normal;
+                color: $font_dark_gray;
+                opacity: .6;
+                cursor: pointer;
+            }
+
+            .page-count{
+                width: 34px;
+                height: 100%;
+                font-size: 14px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: normal;
+                color: $primary_dark_blue;
+                border-right: 1px solid $border_gray_light;
+                cursor: pointer;
+                
+                &:nth-child(2){
+                    border-left: 1px solid $border_gray_light;
+                }
+
+                &.active{
+                    background-color: $primary_dark_blue;
+                    color: $bg_white_light;
+                }
+                
+                &.disabled{
+                    opacity: .6;
+                }
+            }
+        }
+    }
+
+    table{
+        width: 100%;
+        border: 2px solid $borde_gray_main;
+
+        thead{
+            tr{
+                th{
+                    text-align: left;
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: $font_dark_gray;
+
+                    div{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        .sort{
+                            span{
+                                margin: 0 6px;
+                                cursor: pointer;
+                            }
+
+                            img{
+                                height: 13px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        tbody{
+            tr{
+                background-color: #fff;
+                
+                &:nth-child(odd){
+                    background-color: $bg_gray_light;
+                }
+
+                &:last-child{
+                    td{
+                        border-top: 2px solid $borde_gray_main;
+                        font-weight: bold;
+                        font-size: 14px;
+                        color: $font_dark_gray;
+                    }
+                }
+
+                td{
+                    border-top: solid 1px $borde_gray_main;
+
+                    p{
+                        font-size: 14px;
+                        font-weight: normal;
+                        color: $font_dark_gray;
+                    }
+
+                    p:first-child{
+                        font-weight: bold;
+                        margin-bottom: 5px;
+                    }
+                    
+                    .stock, .status{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    
+                        .stock-info{
+                            p{
+                                font-size: 14px;
+                            }
+
+                            .status{
+                                display: inline-block;
+                                padding: 3px 8px;
+                                border-radius: 3px;
+                                font-size: 10px;
+                                text-transform: uppercase;
+
+                                &.active{
+                                    background-color: $primary_green;
+                                    color: $bg_white_light;
+                                }
+    
+                                &.pulled, &.cancelling{
+                                    background-color: $primary_yellow;
+                                    color: $font_dark_gray;
+                                }
+
+                                &.lifetime{
+                                    background-color: $primary_dark_blue;
+                                    color: $bg_white_light;
+                                }
+    
+                                &.cancelled{
+                                    background-color: $primary_red;
+                                    color: $bg_white_light;
+                                }
+                            }
+                        }
+    
+                        .stock-value{
+                            position: relative;
+                            width: 40px;
+                            height: 40px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            margin-left: 25px;
+                            
+                            span{
+                                position: absolute;
+                                top: 15px;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                font-size: 9px;
+                                font-weight: bold;
+                                color: $font_dark_gray;
+                            }
+
+                            svg{
+                                width: 40px;
+
+                                text{
+                                    display: none;
+                                }
+
+                                circle{
+                                    stroke: $circle_gray;
+                                }
+                            }
+                        }
+                    }
+                    
+                    .status .stock-info span{
+                        display: block;
+                        font-size: 14px;
+                        color: $font_dark_gray;
+                    }
+
+                    .product{
+                        display: flex;
+                        align-items: center;
+
+                        .product-logo{
+                            margin-right: 15px;
+
+                            img{
+                                width: 38px;
+                                height: 38px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        th, td{
+            padding: 10px 10px 10px 20px;
+            border-right: solid 1px $borde_gray_main;
+
+            &:first-child{
+                padding: 0 15px;
+            }
+
+            &:last-child{
+                border-right: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+@import '../../variables';
+
+.page-header{
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    background-color: $bg_blue_light;
+
+    .icon{
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $bg_white_light;
+        border-radius: 3px;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+
+        img{
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    .page-details{
+        margin-left: 30px;
+
+        .name{
+            font-size: 20px;
+            font-weight: normal;
+            color: $font_light_gray;
+        }
+
+        .description{
+            margin-top: 6px;
+            font-size: 14px;
+            font-weight: normal;
+            color: $font_light_gray;
+        }
+    }
+}

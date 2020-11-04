@@ -1,0 +1,102 @@
+@import '../../variables';
+
+.stats{
+    max-width: 1150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto 30px;
+    
+    .item{
+        display: flex;
+        align-items: center;
+        width: calc(33.33% - 19px);
+        min-height: 130px;
+        position: relative;
+        margin-top: 30px;
+        padding: 17px 15px;
+        border-radius: 3px;
+        background-color: $bg_white_light;
+
+        .icon{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 3px;
+            background-color: $primary_blue;
+
+            img{
+                width: auto;
+                height: 18px;
+            }
+        }
+    
+        .details{
+            margin-left: 15px;
+
+            .name{
+                font-size: 14px;
+                font-weight: normal;
+                color: $font_light_gray;
+            }
+    
+            .value{
+                font-size: 42px;
+                font-weight: bold;
+                line-height: 58px;
+                color: $font_light_gray;
+            }
+    
+            .compare{
+                img{
+                    width: 9px;   
+                }
+
+                span{
+                    margin-left: 5px;
+                    font-size: 14px;
+                    font-weight: normal;
+                }
+
+                &.green{
+                    span{
+                        color: $primary_green;
+                    }
+                }
+
+                &.red{
+                    span{
+                        color: $primary_red;
+                    }
+                }
+
+                &.yellow{
+                    img{
+                        width: 10px;
+                    }
+
+                    span{
+                        color: $primary_yellow;
+                    }
+                }
+            }
+        }
+
+        .more{
+            width: 12px;
+            position: absolute;
+            top: 20px;
+            right: 15px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            
+            img{
+                width: 12px;
+            }
+        }
+    }
+}

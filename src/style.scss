@@ -1,0 +1,51 @@
+@import "./variables";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.page-wraper{
+    display: flex;
+
+    .page-container{
+        width: calc(100% - 280px);
+        height: 100vh;
+        padding-top: 60px;
+        background-color: $bg_blue_dark;
+    }
+}
+
+.main-content{
+    padding: 0 30px 30px;
+    background-color: $bg_blue_dark;
+}
+
+.custom-checkbox{
+    cursor: pointer;
+    
+    span {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background-image: url('./assets/checkbox.svg');
+    }
+
+    input {
+        display: none;
+
+        &:checked ~ span {
+            background-image: url('./assets/checkbox-active.svg');
+        }
+    }
+}

@@ -1,0 +1,48 @@
+@import '../../variables';
+
+.navbar{
+    width: 280px;
+    padding: 75px 25px 30px;
+    background-color: $bg_white_light;
+
+    .section{
+        padding-bottom: 20px;
+    }
+
+    .section-label{
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: $primary_blue;
+    }
+
+    .nav-list{
+        padding-left: 10px;
+
+        .nav-item{
+            display: block;
+            margin-top: 19px;
+
+            img{
+                width: 22px;
+                height: 22px;
+                vertical-align: middle;
+            }
+
+            span{
+                margin-left: 12px;
+                vertical-align: middle;
+                color: $font_dark_gray;
+                font-size: 14px;
+                font-weight: normal;
+            }
+
+            &.router-link-active{
+                span{
+                    color: $primary_dark_blue;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

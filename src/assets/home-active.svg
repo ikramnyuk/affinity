@@ -1,0 +1,23 @@
+<svg id="Desk" xmlns="http://www.w3.org/2000/svg" width="30.002" height="30" viewBox="0 0 30.002 30">
+  <path id="Trazado_710" data-name="Trazado 710" d="M3908.8,2077.165v9.293a.419.419,0,0,1-.417.42h-14.936a.419.419,0,0,1-.418-.42v-9.293a.417.417,0,0,1,.415-.418h14.939a.415.415,0,0,1,.417.417Z" transform="translate(-3885.912 -2076.747)" fill="#4988fd"/>
+  <path id="Trazado_711" data-name="Trazado 711" d="M3908.8,2077.165v7.654h-15.771v-7.654a.417.417,0,0,1,.415-.418h14.939a.415.415,0,0,1,.417.417Z" transform="translate(-3885.912 -2076.747)" fill="#2767f4"/>
+  <line id="Línea_120" data-name="Línea 120" x1="15.644" transform="translate(7.178 8.239)" fill="none"/>
+  <rect id="Rectángulo_726" data-name="Rectángulo 726" width="15.012" height="4.791" transform="translate(3.313 13.608)" fill="#4988fd"/>
+  <g id="Grupo_507" data-name="Grupo 507" transform="translate(12.338 10.131)">
+    <path id="Trazado_712" data-name="Trazado 712" d="M3895.813,2084.16a2.326,2.326,0,0,0,.563-2.01h4.213a2.32,2.32,0,0,0,.563,2.01" transform="translate(-3895.813 -2082.15)" fill="#2767f4"/>
+  </g>
+  <rect id="Rectángulo_727" data-name="Rectángulo 727" width="30.002" height="1.674" transform="translate(0 12.139)" fill="#6097fd"/>
+  <rect id="Rectángulo_728" data-name="Rectángulo 728" width="0.669" height="0.784" transform="translate(2.398 29.216)" fill="#2767f4"/>
+  <rect id="Rectángulo_729" data-name="Rectángulo 729" width="1.716" height="15.539" transform="translate(1.875 13.814)" fill="#4988fd"/>
+  <rect id="Rectángulo_730" data-name="Rectángulo 730" width="0.669" height="0.784" transform="translate(18.581 29.216)" fill="#2767f4"/>
+  <rect id="Rectángulo_731" data-name="Rectángulo 731" width="0.669" height="0.784" transform="translate(27.081 29.216)" fill="#2767f4"/>
+  <rect id="Rectángulo_732" data-name="Rectángulo 732" width="12.412" height="2.511" transform="translate(4.639 14.852)" fill="#6097fd"/>
+  <path id="Trazado_713" data-name="Trazado 713" d="M3909.224,2084.113v15.537H3898.8v-15.537" transform="translate(-3880.861 -2070.301)" fill="#4988fd"/>
+  <rect id="Rectángulo_733" data-name="Rectángulo 733" width="7.911" height="3.433" rx="0.915" transform="translate(19.162 15.404)" fill="#6097fd"/>
+  <circle id="Elipse_64" data-name="Elipse 64" cx="0.544" cy="0.544" r="0.544" transform="translate(22.481 16.368)" fill="#dfecfd"/>
+  <circle id="Elipse_65" data-name="Elipse 65" cx="0.471" cy="0.471" r="0.471" transform="translate(10.367 15.636)" fill="#dfecfd"/>
+  <rect id="Rectángulo_734" data-name="Rectángulo 734" width="7.911" height="3.433" rx="0.915" transform="translate(19.162 19.973)" fill="#6097fd"/>
+  <circle id="Elipse_66" data-name="Elipse 66" cx="0.544" cy="0.544" r="0.544" transform="translate(22.481 20.936)" fill="#dfecfd"/>
+  <rect id="Rectángulo_735" data-name="Rectángulo 735" width="7.911" height="3.433" rx="0.915" transform="translate(19.162 24.539)" fill="#6097fd"/>
+  <circle id="Elipse_67" data-name="Elipse 67" cx="0.544" cy="0.544" r="0.544" transform="translate(22.481 25.503)" fill="#dfecfd"/>
+</svg>
