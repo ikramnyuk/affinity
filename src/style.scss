@@ -1,10 +1,15 @@
 @import "./variables";
 
+@font-face {
+	font-family: 'SegoeUI';
+	src: url('./fonts/9404.ttf') format('truetype');
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'SegoeUI', Arial, sans-serif;
 }
 
 li{
@@ -46,6 +51,55 @@ a{
 
         &:checked ~ span {
             background-image: url('./assets/checkbox-active.svg');
+        }
+    }
+}
+
+.v-application .commont-wraper .info{
+    background-color: transparent!important;
+    border-color: none!important;
+}
+
+.btn{
+    height: 30px;
+    margin-left: 20px;
+    padding: 0 14px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: $bg_white_light;
+
+    &:first-child{
+        margin-left: 0;
+    }
+
+    img{
+        width: 12px;
+        height: 12px;
+    }
+
+    span{
+        margin-left: 6px;
+    }
+
+    &.blue-color{
+        background-color: $primary_dark_blue;
+    }
+
+    &.brown-color{
+        background-color: $primary_brown;
+    }
+
+    &.red-color{
+        background-color: $primary_red;
+    }
+
+    &.yellow-color{
+        background-color: $primary_yellow;
+        
+        span{
+            color: $font_dark_gray;
         }
     }
 }

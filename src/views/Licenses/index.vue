@@ -3,8 +3,12 @@
 		<PageHeader title="Licences" :icon="icon" description="Lorem ipsum dolor sit amet."></PageHeader>
 
 		<div class="main-content">
-			<DataTable :data="tableData" :headers="headers" label="" pagination="Showing 1 to 10 of 57 entries" :pages="pages" :buttons="buttons" />
+			<DataTable :data="tableData" :headers="headers" label="" pagination="Showing 1 to 10 of 57 entries" :pages="pages" :buttons="buttons" :openModal="(key) => openModal(key - 1)"/>
 		</div>
+
+		<NewLicense v-if="modal1" :close="() => {closeModal(0)}" />
+		<UnbindLicense v-if="modal2" :close="() => {closeModal(1)}" />
+		<RevokeLicense v-if="modal3" :close="() => {closeModal(2)}" />
 	</div>
 </template>
 
@@ -24,15 +28,22 @@
 	import KeyIcon from '../../assets/single-key.svg';
 	import RemoveIcon from '../../assets/remove.svg';
 
+	import NewLicense from '../../components/ModalWindows/NewLicense';
+	import UnbindLicense from '../../components/ModalWindows/UnbindLicense';
+	import RevokeLicense from '../../components/ModalWindows/RevokeLicense';
+
 	import './style.scss';
 
 	export default {
 		name: 'Licenses',
-		components: { PageHeader, DataTable },
+		components: { PageHeader, DataTable, NewLicense, UnbindLicense, RevokeLicense },
 		data: () => {
 			return {
 				icon: HomeIcon,
 				pages: [1, 2, 3, 4, 5, 6],
+				modal1: false,
+				modal2: false,
+				modal3: false,
 				buttons: [
 					{name: 'Send Receipt', icon: ListIcon, type: 'blue'},
 					{name: 'Manage Customer', icon: ToolsIcon, type: 'blue'},
@@ -318,6 +329,40 @@
 						},
 					}
 				]
+			}
+		},
+
+		methods: {
+			openModal(key){
+				switch (key) {
+					case 0:
+						this.modal1 = true;
+						break;
+
+					case 1:
+						this.modal2= true;
+						break;
+
+					case 2:
+						this.modal3 = true;
+						break;
+				}
+			},
+
+			closeModal(key){
+				switch (key) {
+					case 0:
+						this.modal1 = false;
+						break;
+
+					case 1:
+						this.modal2= false;
+						break;
+
+					case 2:
+						this.modal3 = false;
+						break;
+				}
 			}
 		}
 	}

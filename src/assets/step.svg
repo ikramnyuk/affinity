@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="Сгруппировать_837" data-name="Сгруппировать 837" transform="translate(-987 -280)">
+    <circle id="Эллипс_85" data-name="Эллипс 85" cx="10" cy="10" r="10" transform="translate(987 280)" fill="#fff"/>
+    <g id="Эллипс_86" data-name="Эллипс 86" transform="translate(992 285)" fill="#fff" stroke="#2a61ff" stroke-width="3">
+      <circle cx="5" cy="5" r="5" stroke="none"/>
+      <circle cx="5" cy="5" r="6.5" fill="none"/>
+    </g>
+  </g>
+</svg>

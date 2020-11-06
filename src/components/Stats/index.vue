@@ -35,15 +35,15 @@
                 
                 switch (key) {
                     case 1:
-                        status = 'green';
+                        status = 'green-color';
                         break;
 
                     case 2:
-                        status = 'red';
+                        status = 'red-color';
                         break;
 
                     case 3:
-                        status = 'yellow';
+                        status = 'yellow-color';
                         break;
                 }
 

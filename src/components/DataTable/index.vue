@@ -11,7 +11,7 @@
                 </div>
 
                 <div class="buttons">
-                    <div v-for="(item, key) in buttons" :class="item.type + ' btn'" :key="key">
+                    <div v-for="(item, key) in buttons" :class="item.type + '-color btn'" :key="key" @click="openModal(key)">
                         <img :src="item.icon" alt="add_icon">
                         <span>{{ item.name }}</span>
                     </div>
@@ -119,7 +119,7 @@
 	export default {
 		name: 'DataTable',
         components: { 'pie-chart': PieChart },
-        props: ['data', 'headers', 'label', 'pagination', 'pages', 'buttons'],
+        props: ['data', 'headers', 'label', 'pagination', 'pages', 'buttons', 'openModal'],
 
         data: () => {
             return {

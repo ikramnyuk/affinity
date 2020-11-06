@@ -6,11 +6,11 @@
 
 		<div class="right-side">
 			<div class="actions">
-				<div class="btn-icon blue">
+				<div class="btn-icon blue-color">
 					<img src="../../assets/shedule.svg" alt="shedule_icon">
 				</div>
 
-				<div class="btn-icon red">
+				<div class="btn-icon red-color">
 					<img src="../../assets/notification.svg" alt="notification_icon">
 				</div>
 			</div>

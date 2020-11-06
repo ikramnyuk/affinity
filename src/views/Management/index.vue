@@ -5,10 +5,12 @@
 		<div class="main-content">
 			<Stats :stats="stats" />
 
-			<DataTable :data="tableData2" :headers="headers2" label="STAFF" pagination="Showing 1 to 10 of 11 entries" :pages="pages" :buttons="buttons" />
-			<DataTable :data="tableData" :headers="headers" label="Product" pagination="Showing 1 to 4 of 4 entries" :pages="pages2" :buttons="buttons" />
+			<DataTable :data="tableData2" :headers="headers2" label="STAFF" pagination="Showing 1 to 10 of 11 entries" :pages="pages" :buttons="buttons" :openModal="(key) => openModal(key)" />
+			<DataTable :data="tableData" :headers="headers" label="Product" pagination="Showing 1 to 4 of 4 entries" :pages="pages2" :buttons="buttons" :openModal="(key) => openModal(key)" />
 			
 		</div>
+
+		<NewService v-if="modal1" :close="() => {closeModal(0)}" />
 	</div>
 </template>
 
@@ -35,17 +37,22 @@
 	import BrushIcon from '../../assets/brush.svg';
 	import RemoveIcon from '../../assets/remove.svg';
 
+	import NewService from '../../components/ModalWindows/NewService';
+	import NewIcon from '../../assets/add.svg';
+
 	import './style.scss';
 
 	export default {
 		name: 'Management',
-		components: { PageHeader, Stats, DataTable },
+		components: { PageHeader, Stats, DataTable, NewService },
 		data: () => {
 			return {
+				modal1: false,
 				icon: HomeIcon,
 				pages: [1],
 				pages2: [1, 2],
 				buttons: [
+					{name: 'New', icon: NewIcon, type: 'blue'},
 					{name: 'Edit Service', icon: BrushIcon, type: 'blue'},
 					{name: 'Delete', icon: RemoveIcon, type: 'red'}
 				],
@@ -390,6 +397,48 @@
 						},
 					}
 				]
+			}
+		},
+
+		methods: {
+			openModal(key){
+				switch (key) {
+					case 0:
+						this.modal1 = true;
+						break;
+
+					case 1:
+						this.modal2= true;
+						break;
+
+					case 2:
+						this.modal3 = true;
+						break;
+
+					case 3:
+						this.modal4 = true;
+						break;
+				}
+			},
+
+			closeModal(key){
+				switch (key) {
+					case 0:
+						this.modal1 = false;
+						break;
+
+					case 1:
+						this.modal2= false;
+						break;
+
+					case 2:
+						this.modal3 = false;
+						break;
+
+					case 3:
+						this.modal4 = false;
+						break;
+				}
 			}
 		}
 	}
