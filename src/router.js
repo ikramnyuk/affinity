@@ -10,8 +10,8 @@ import Releases from './views/Releases';
 import Prices from './views/Prices';
 import Analytics from './views/Analytics';
 import Management from './views/Management';
-// import Updates from './views/Updates';
-// import Settings from './views/Settings';
+import Updates from './views/Updates';
+import Settings from './views/Settings';
 import Placeholder from './views/Placeholder';
 
 const routes = [
@@ -47,11 +47,11 @@ const routes = [
             },
             {
                 path: '/updates',
-                component: Placeholder
+                component: Updates
             },
             {
                 path: '/settings',
-                component: Placeholder
+                component: Settings
             },
             {
                 path: '/calendar',
