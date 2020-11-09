@@ -218,3 +218,11 @@
         }
     }
 }
+
+.modal-window-wrap .modal-window .form .custom-row{
+    flex-wrap: wrap;   
+}
+
+.modal-window-wrap .modal-window .form .custom-row .custom-col, .modal-window-wrap .modal-window .form .custom-row .custom-col.custom-col-3, .modal-window-wrap .modal-window .form .custom-row .custom-col.custom-col-6{
+    width: 100%;
+}
