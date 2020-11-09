@@ -1,16 +1,20 @@
 <template>
-	<nav @click="close()" :class="menu ? 'navbar opened' : 'navbar'" v-if="count">
+	<nav :class="menu ? 'navbar opened' : 'navbar'" v-if="count">
 		<div class="user">
 			<div class="avatar">
 				<img src="../../assets/avatar.svg" alt="avatar">
 			</div>
 			<div class="info">
-				<div class="name">Cillysen#0001</div>
+				<div @click="openLogout" class="name" id="button1">Cillysen#0001</div>
 				<div class="role">Administrator</div>
+
+				<div v-if="logout" class="user-options" id="popup">
+					<span>Logout</span>
+				</div>
 			</div>
 		</div>
 
-		<div class="section">
+		<div @click="close()" class="section">
 			<h2 class="section-label">MENU</h2>
 			<div class="nav-list">
 				<router-link to="/home" class="nav-item">
@@ -41,7 +45,7 @@
 			</div>
 		</div>
 
-		<div class="section">
+		<div @click="close()" class="section">
 			<h2 class="section-label">TOOLS</h2>
 			<div class="nav-list">
 				<router-link to="/management" class="nav-item">
@@ -56,7 +60,7 @@
 			</div>
 		</div>
 
-		<div class="section">
+		<div @click="close()" class="section">
 			<h2 class="section-label">OTHER</h2>
 			<div class="nav-list">
 				<router-link to="/updates" class="nav-item">
@@ -82,7 +86,8 @@
 		components: {},
 		data: () => {
 			return {
-				count: 1
+				count: 1,
+				logout: false
 			}
 		},
 
@@ -92,7 +97,24 @@
 			},
 		},
 
+		mounted(){
+			let button = document.getElementById('button1'),
+				self = this;
+
+			document.addEventListener('click', function(event) {
+				let isClickButton = button.contains(event.target);
+				
+				if (!isClickButton) {
+					self.logout = false;
+				}
+			});
+		},
+
 		methods: {
+			openLogout(){
+				this.logout = true;
+			},
+
 			close(){
 				this.count++;
 				this.$store.dispatch('Common/setMenu', false);

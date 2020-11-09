@@ -33,22 +33,25 @@ a{
     margin-bottom: 0!important;
 }
 
-@media(max-width: 1300px){
-    .commont-wraper{
-        overflow-x: hidden;
-    }
-}
+// @media(max-width: 1300px){
+//     .commont-wraper{
+//         overflow-x: hidden;
+//     }
+// }
 
 .page-wraper{
     display: flex;
 
     .page-container{
-        width: calc(100% - 280px);
+        width: 100%;
         height: 100vh;
+        padding-top: 60px;
+        padding-left: 280px;
         background-color: $bg_blue_dark;
 
         @media(max-width: 1300px){
             width: 100%;
+            padding-left: 0;
         }
     }
 

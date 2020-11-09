@@ -5,9 +5,15 @@
 		<div class="main-content">
 			<Stats :stats="stats" />
 
-			<DataTable :data="tableData" :headers="headers" label="LIVE RELEASES" pagination="Showing 1 to 3 of 3 entries" :pages="pages" :buttons="buttons" :selectedBtns="selectedBtns2" />
-			<DataTable :data="tableData2" :headers="headers2" label="SERVICES" pagination="Showing 1 to 4 of 4 entries" :pages="pages" :buttons="buttons" :selectedBtns="selectedBtns" />
+			<DataTable :data="tableData" :headers="headers" label="LIVE RELEASES" pagination="Showing 1 to 3 of 3 entries" :pages="pages" :buttons="buttons2" :selectedBtns="selectedBtns2" :openModal="(key) => openModal(key)"/>
+			<DataTable :data="tableData2" :headers="headers2" label="SERVICES" pagination="Showing 1 to 4 of 4 entries" :pages="pages" :buttons="buttons" :selectedBtns="selectedBtns" :openModal="(key) => openModal(key)"/>
 		</div>
+
+		<NewRelease v-if="modal1" :close="() => {closeModal(0)}" />
+		<EditRelease v-if="modal2" :close="() => {closeModal(1)}" />
+		<ReleaseStock v-if="modal3" :close="() => {closeModal(2)}" />
+		<PullStock v-if="modal4" :close="() => {closeModal(3)}" />
+		<NewService v-if="modal5" :close="() => {closeModal(4)}" />
 	</div>
 </template>
 
@@ -27,6 +33,12 @@
 	import StatsIcons2 from '../../assets/diamond.svg';
 	import StatsIcons3 from '../../assets/key.svg';
 
+	import NewRelease from '../../components/ModalWindows/NewRelease';
+	import EditRelease from '../../components/ModalWindows/EditRelease';
+	import ReleaseStock from '../../components/ModalWindows/ReleaseStock';
+	import PullStock from '../../components/ModalWindows/PullStock';
+	import NewService from '../../components/ModalWindows/NewService';
+
 	import BrushIcon from '../../assets/brush.svg';
 	import LockIcon from '../../assets/lock.svg';
 	import RemoveIcon from '../../assets/remove.svg';
@@ -36,13 +48,18 @@
 
 	export default {
 		name: 'Home',
-		components: { PageHeader, Stats, DataTable },
+		components: { PageHeader, Stats, DataTable, NewRelease, EditRelease, ReleaseStock, PullStock, NewService },
 		data: () => {
 			return {
+				modal1: false,
+				modal2: false,
+				modal3: false,
+				modal4: false,
+				modal5: false,
 				icon: HomeIcon,
 				pages: [1],
 				buttons: [
-					{name: 'New', icon: NewIcon, type: 'blue'}
+					{name: 'New Service', icon: NewIcon, type: 'blue'}
 				],
 				buttons2: [
 					{name: 'New', icon: NewIcon, type: 'blue'}
@@ -253,6 +270,56 @@
 						},
 					}
 				]
+			}
+		},
+
+		methods: {
+			openModal(key){
+				switch (key) {
+					case 'New':
+						this.modal1 = true;
+						break;
+
+					case 'Edit Release':
+						this.modal2= true;
+						break;
+
+					case 'Delete':
+						this.modal3 = true;
+						break;
+
+					case 'Pull Stock':
+						this.modal4 = true;
+						break;
+
+					case 'New Service':
+						this.modal5 = true;
+						break;
+				}
+			},
+
+			closeModal(key){
+				switch (key) {
+					case 0:
+						this.modal1 = false;
+						break;
+
+					case 1:
+						this.modal2= false;
+						break;
+
+					case 2:
+						this.modal3 = false;
+						break;
+
+					case 3:
+						this.modal4 = false;
+						break;
+
+					case 4:
+						this.modal5 = false;
+						break;
+				}
 			}
 		}
 	}

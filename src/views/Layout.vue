@@ -6,7 +6,7 @@
 			<div @click="openMenu" v-if="menu" class="menu-opened"></div>
 			<NavBar />
 
-			<div class="page-container">
+			<div :class="menu ? 'page-container opened' : 'page-container'">
 				<router-view></router-view>
 			</div>
 		</div>
