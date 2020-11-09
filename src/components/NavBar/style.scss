@@ -2,8 +2,23 @@
 
 .navbar{
     width: 280px;
-    padding: 75px 25px 30px;
+    padding: 14px 25px 30px;
     background-color: $bg_white_light;
+
+    @media(max-width: 1300px){
+        height: 100vh;
+        position: fixed;
+        left: -400px;
+        top: 0;
+        transition: .3s;
+        z-index: 90;
+    }
+
+    &.opened{
+        @media(max-width: 1300px){
+            left: 0;
+        }
+    }
 
     .section{
         padding-bottom: 20px;
@@ -21,7 +36,7 @@
 
         .nav-item{
             display: block;
-            margin-top: 19px;
+            margin-top: 14.5px;
 
             img{
                 width: 22px;

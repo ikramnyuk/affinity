@@ -3,8 +3,8 @@
 		<PageHeader title="Releases" :icon="icon" description="Lorem ipsum dolor sit amet."></PageHeader>
 
 		<div class="main-content">
-			<DataTable :data="tableData" :headers="headers" label="LIVE RELEASES" pagination="Showing 1 to 3 of 3 entries" :pages="pages" :buttons="buttons" :openModal="(key) => openModal(key)" />
-			<DataTable :data="tableData2" :headers="headers" label="PAST RELEASES" pagination="Showing 1 to 3 of 3 entries" :pages="pages" :buttons="buttons2" :openModal="(key) => openModal(key)" />
+			<DataTable :data="tableData" :headers="headers" label="LIVE RELEASES" pagination="Showing 1 to 3 of 3 entries" :pages="pages" :buttons="buttons" :selectedBtns="selectedBtns" :openModal="(key) => openModal(key)" />
+			<DataTable :data="tableData2" :headers="headers" label="PAST RELEASES" pagination="Showing 1 to 3 of 3 entries" :pages="pages" :buttons="buttons2" :selectedBtns="selectedBtns2" :openModal="(key) => openModal(key)" />
 		</div>
 
 		<NewRelease v-if="modal1" :close="() => {closeModal(0)}" />
@@ -46,14 +46,19 @@
 				pages: [1],
 				buttons: [
 					{name: 'New', icon: NewIcon, type: 'blue'},
+				],
+				selectedBtns: [
 					{name: 'Edit Release', icon: BrushIcon, type: 'blue'},
-					{name: 'Release Stock', icon: LockIcon, type: 'yellow'},
+					{name: 'Pull Stock', icon: LockIcon, type: 'yellow'},
 					{name: 'Delete', icon: RemoveIcon, type: 'red'}
 				],
-				buttons2: [
+				selectedBtns2: [
 					{name: 'Edit Release', icon: BrushIcon, type: 'blue'}
 				],
-				headers: ['Release', 'Plan', 'Created', 'Link', 'Stock'],
+				buttons2: [
+					
+				],
+				headers: [{label: 'Release', width: '214px'}, {label: 'Plаn', width: '180px'}, {label: 'Created', width: '150px'}, {label: 'Link', width: '320px'}, {label: 'Stock', width: '200px'}],
 				tableData: [
 					{
 						release: {
@@ -61,7 +66,7 @@
 							sublabel: 'Cart hold enabled',
 							sort: true
 						},
-						plan: {
+						plаn: {
 							label: 'Renewal (6 months)',
 							sublabel: '$30.00 USD / month',
 							sort: true
@@ -89,7 +94,7 @@
 							sublabel: 'Cart hold enabled',
 							sort: true
 						},
-						plan: {
+						plаn: {
 							label: 'Renewal (6 months)',
 							sublabel: '$30.00 USD / month',
 							sort: true
@@ -117,7 +122,7 @@
 							sublabel: 'Cart hold enabled',
 							sort: true
 						},
-						plan: {
+						plаn: {
 							label: 'Renewal (6 months)',
 							sublabel: '$30.00 USD / month',
 							sort: true
@@ -147,7 +152,7 @@
 							sublabel: 'Cart hold enabled',
 							sort: true
 						},
-						plan: {
+						plаn: {
 							label: 'Renewal (6 months)',
 							sublabel: '$30.00 USD / month',
 							sort: true
@@ -175,7 +180,7 @@
 							sublabel: 'Cart hold enabled',
 							sort: true
 						},
-						plan: {
+						plаn: {
 							label: 'Renewal (6 months)',
 							sublabel: '$30.00 USD / month',
 							sort: true
@@ -203,7 +208,7 @@
 							sublabel: 'Cart hold enabled',
 							sort: true
 						},
-						plan: {
+						plаn: {
 							label: 'Renewal (6 months)',
 							sublabel: '$30.00 USD / month',
 							sort: true
@@ -232,19 +237,19 @@
 		methods: {
 			openModal(key){
 				switch (key) {
-					case 0:
+					case 'New':
 						this.modal1 = true;
 						break;
 
-					case 1:
+					case 'Edit Release':
 						this.modal2= true;
 						break;
 
-					case 2:
+					case 'Delete':
 						this.modal3 = true;
 						break;
 
-					case 3:
+					case 'Pull Stock':
 						this.modal4 = true;
 						break;
 				}

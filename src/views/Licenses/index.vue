@@ -1,9 +1,9 @@
 <template>
-    <div class="page">
+    <div class="page without-label">
 		<PageHeader title="Licences" :icon="icon" description="Lorem ipsum dolor sit amet."></PageHeader>
 
 		<div class="main-content">
-			<DataTable :data="tableData" :headers="headers" label="" pagination="Showing 1 to 10 of 57 entries" :pages="pages" :buttons="buttons" :openModal="(key) => openModal(key - 1)"/>
+			<DataTable :data="tableData" :headers="headers" label="" pagination="Showing 1 to 10 of 57 entries" :pages="pages" :search="true" :buttons="buttons" :selectedBtns="selectedBtns" :openModal="(key) => openModal(key)"/>
 		</div>
 
 		<NewLicense v-if="modal1" :close="() => {closeModal(0)}" />
@@ -31,6 +31,8 @@
 	import NewLicense from '../../components/ModalWindows/NewLicense';
 	import UnbindLicense from '../../components/ModalWindows/UnbindLicense';
 	import RevokeLicense from '../../components/ModalWindows/RevokeLicense';
+	import NewIcon from '../../assets/add.svg';
+	import ExportIcon from '../../assets/export.svg';
 
 	import './style.scss';
 
@@ -44,16 +46,23 @@
 				modal1: false,
 				modal2: false,
 				modal3: false,
+				modalBtns: [],
 				buttons: [
+					{name: 'New', icon: NewIcon, type: 'blue'},
+					{name: 'Export', icon: ExportIcon, type: 'blue'},
+				],
+
+				selectedBtns: [
 					{name: 'Send Receipt', icon: ListIcon, type: 'blue'},
 					{name: 'Manage Customer', icon: ToolsIcon, type: 'blue'},
 					{name: 'Unbind', icon: KeyIcon, type: 'brown'},
 					{name: 'Revoke', icon: RemoveIcon, type: 'red'}
 				],
-				headers: ['Member', 'Customer', 'Plan', 'License', 'Status'],
+
+				headers: [{label: 'Member', width: '225px'}, {label: 'Customer', width: '220px'}, {label: 'Plаn', width: '170px'}, {label: 'License', width: '270px'}, {label: 'Status', width: '180px'}],
 				tableData: [
 					{
-						imaged: {
+						member: {
 							label: 'Cillysen#0001',
 							sublabel: '229733461454225408',
 							image: UserAvatar4
@@ -62,7 +71,7 @@
 							label: 'hey@cillysen.com',
 							sublabel: 'cus_DAGonfokasfoqwt999'
 						},
-						plan: {
+						plаn: {
 							label: 'Lifetime',
 							sublabel: '$1,000.00 USD'
 						},
@@ -76,7 +85,7 @@
 						},
 					},
 					{
-						imaged: {
+						member: {
 							label: 'Will Smith#9999',
 							sublabel: '229733461454225408',
 							image: UserAvatar1
@@ -85,7 +94,7 @@
 							label: 'randomemail@domain.com',
 							sublabel: 'cus_DAGonfokasfoqwt999'
 						},
-						plan: {
+						plаn: {
 							label: 'Renewal',
 							sublabel: '$30.00 USD / month'
 						},
@@ -99,7 +108,7 @@
 						},
 					},
 					{
-						imaged: {
+						member: {
 							label: 'Jennifer L#0001',
 							sublabel: '229733461454225408',
 							image: UserAvatar2
@@ -108,7 +117,7 @@
 							label: 'hey@cillysen.com',
 							sublabel: 'cus_DAGonfokasfoqwt999'
 						},
-						plan: {
+						plаn: {
 							label: 'Lifetime',
 							sublabel: '$1,000.00 USD'
 						},
@@ -122,7 +131,7 @@
 						},
 					},
 					{
-						imaged: {
+						member: {
 							label: 'Cillysen#0001',
 							sublabel: '229733461454225408',
 							image: UserAvatar3
@@ -131,7 +140,7 @@
 							label: 'hey@cillysen.com',
 							sublabel: 'cus_DAGonfokasfoqwt999'
 						},
-						plan: {
+						plаn: {
 							label: 'Lifetime',
 							sublabel: '$1,000.00 USD'
 						},
@@ -145,7 +154,7 @@
 						},
 					},
 					{
-						imaged: {
+						member: {
 							label: 'Cillysen#0001',
 							sublabel: '229733461454225408',
 							image: UserAvatar4
@@ -154,7 +163,7 @@
 							label: 'hey@cillysen.com',
 							sublabel: 'cus_DAGonfokasfoqwt999'
 						},
-						plan: {
+						plаn: {
 							label: 'Lifetime',
 							sublabel: '$1,000.00 USD'
 						},
@@ -168,7 +177,7 @@
 						},
 					},
 					{
-						imaged: {
+						member: {
 							label: 'Will Smith#9999',
 							sublabel: '229733461454225408',
 							image: UserAvatar1
@@ -177,7 +186,7 @@
 							label: 'randomemail@domain.com',
 							sublabel: 'cus_DAGonfokasfoqwt999'
 						},
-						plan: {
+						plаn: {
 							label: 'Renewal',
 							sublabel: '$30.00 USD / month'
 						},
@@ -191,7 +200,7 @@
 						},
 					},
 					{
-						imaged: {
+						member: {
 							label: 'Jennifer L#0001',
 							sublabel: '229733461454225408',
 							image: UserAvatar2
@@ -200,7 +209,7 @@
 							label: 'hey@cillysen.com',
 							sublabel: 'cus_DAGonfokasfoqwt999'
 						},
-						plan: {
+						plаn: {
 							label: 'Lifetime',
 							sublabel: '$1,000.00 USD'
 						},
@@ -214,7 +223,7 @@
 						},
 					},
 					{
-						imaged: {
+						member: {
 							label: 'Cillysen#0001',
 							sublabel: '229733461454225408',
 							image: UserAvatar3
@@ -223,7 +232,7 @@
 							label: 'hey@cillysen.com',
 							sublabel: 'cus_DAGonfokasfoqwt999'
 						},
-						plan: {
+						plаn: {
 							label: 'Lifetime',
 							sublabel: '$1,000.00 USD'
 						},
@@ -236,8 +245,8 @@
 							sublabel: 'ACTIVE'
 						},
 					},
-										{
-						imaged: {
+					{
+						member: {
 							label: 'Cillysen#0001',
 							sublabel: '229733461454225408',
 							image: UserAvatar4
@@ -246,7 +255,7 @@
 							label: 'hey@cillysen.com',
 							sublabel: 'cus_DAGonfokasfoqwt999'
 						},
-						plan: {
+						plаn: {
 							label: 'Lifetime',
 							sublabel: '$1,000.00 USD'
 						},
@@ -260,7 +269,7 @@
 						},
 					},
 					{
-						imaged: {
+						member: {
 							label: 'Will Smith#9999',
 							sublabel: '229733461454225408',
 							image: UserAvatar1
@@ -269,7 +278,7 @@
 							label: 'randomemail@domain.com',
 							sublabel: 'cus_DAGonfokasfoqwt999'
 						},
-						plan: {
+						plаn: {
 							label: 'Renewal',
 							sublabel: '$30.00 USD / month'
 						},
@@ -283,7 +292,7 @@
 						},
 					},
 					{
-						imaged: {
+						member: {
 							label: 'Jennifer L#0001',
 							sublabel: '229733461454225408',
 							image: UserAvatar2
@@ -292,7 +301,7 @@
 							label: 'hey@cillysen.com',
 							sublabel: 'cus_DAGonfokasfoqwt999'
 						},
-						plan: {
+						plаn: {
 							label: 'Lifetime',
 							sublabel: '$1,000.00 USD'
 						},
@@ -306,7 +315,7 @@
 						},
 					},
 					{
-						imaged: {
+						member: {
 							label: 'Cillysen#0001',
 							sublabel: '229733461454225408',
 							image: UserAvatar3
@@ -315,7 +324,7 @@
 							label: 'hey@cillysen.com',
 							sublabel: 'cus_DAGonfokasfoqwt999'
 						},
-						plan: {
+						plаn: {
 							label: 'Lifetime',
 							sublabel: '$1,000.00 USD'
 						},
@@ -335,15 +344,15 @@
 		methods: {
 			openModal(key){
 				switch (key) {
-					case 0:
+					case 'New':
 						this.modal1 = true;
 						break;
 
-					case 1:
+					case 'Unbind':
 						this.modal2= true;
 						break;
 
-					case 2:
+					case 'Revoke':
 						this.modal3 = true;
 						break;
 				}

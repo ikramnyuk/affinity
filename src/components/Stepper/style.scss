@@ -3,8 +3,13 @@
 .stepper{
     width: calc(50% - 15px);
     margin-top: 30px;
-    padding: 15px 20px 20px;
+    padding: 15px 0px 20px 20px;
     background-color: #fff;
+
+    @media(max-width: 900px){
+        width: 100%;
+        margin-top: 20px;
+    }
 }
 
 .stepper-header{
@@ -14,6 +19,10 @@
         font-size: 14px;
         font-weight: bold;
         color: $font_dark_gray;
+
+        @media(max-width: 1200px){
+            font-size: 12px;
+        }
     }
 
     .actions{
@@ -23,28 +32,7 @@
         align-items: center;
         margin-bottom: 20px;
 
-        .pagination{
-            display: flex;
-            align-items: center;
-
-            span{
-                font-size: 14px;
-                font-weight: normal;
-                color: $font_dark_gray;
-                opacity: .6;
-            }
-
-            input{
-                width: 60px;
-                height: 30px;
-                margin: 0 5px;
-                padding: 0 15px 0 8px;
-                border: solid 1px $border_grey_dark;
-                border-radius: 3px;
-                outline: none;
-            }
-
-        }
+       
     }
 }
 
@@ -60,21 +48,34 @@
         width: 4px;
         border-radius: 2px;
         background-color: $borde_gray_main;
+
+        @media(max-width: 1200px){
+            left: 61px;
+        }
     }
 
     .step{
         display: flex;
         align-items: flex-start;
-        padding-top: 30px;
+        padding-top: 20px;
+        padding-bottom: 7px;
 
         &:last-child{
             padding-bottom: 20px;
+        }
+        
+        @media(max-width: 900px){
+            padding-top: 15px;
         }
 
         .subtitle{
             position: relative;
             font-size: 14px;
             color: $font_white_gray;
+            
+            @media(max-width: 900px){
+                font-size: 12px;
+            }
 
             &:after{
                 content: '';
@@ -86,12 +87,26 @@
                 left: calc(100% + 18px);
                 background-image: url('../../assets/step.svg');
                 z-index: 10;
+                background-size: cover;
+
+                @media(max-width: 1200px){
+                    left: calc(100% + 12px);
+                }
+
+                @media(max-width: 900px){
+                    width: 17px;
+                    height: 17px;
+                }
             }
         }
 
         .step-details{
-            width: calc(100% - 110px);
+            width: calc(100% - 50px);
             padding-left: 48px;
+
+            @media(max-width: 1200px){
+                padding-left: 38px;
+            }
 
             .v-expansion-panel::before{
                 display: none;
@@ -105,6 +120,10 @@
                 text-transform: uppercase;
                 color: $font_dark_gray;
 
+                @media(max-width: 900px){
+                    font-size: 12px;
+                }
+                
                 .v-expansion-panel-header__icon{
                     margin-left: 5px!important;
                 }
@@ -120,20 +139,33 @@
                 font-size: 12px;
                 line-height: 18px;
                 color: $font_dark_gray;
+
+                @media(max-width: 900px){
+                    font-size: 10px;
+                }
             }
 
             .step-info{
                 .step-info__item{
+                    display: flex;
+                    align-items: flex-start;
+                    padding-top: 8px;
+
                     .tip{
                         display: inline-block;
                         margin-top: 10px;
-                        margin-right: 10px;
-                        padding: 2px 8px;
+                        margin-right: 9px;
+                        padding: 1.5px 8px 1.5px;
                         font-size: 10px;
                         font-weight: bold;
                         text-transform: uppercase;
                         color: $bg_white_light;
                         border-radius: 3px;
+
+                        @media(max-width: 900px){
+                            font-size: 8px;
+                            margin-top: 0;
+                        }
 
                         &.blue{
                             background-color: $primary_blue!important;

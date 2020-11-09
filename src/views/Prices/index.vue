@@ -3,7 +3,7 @@
 		<PageHeader title="Prices" :icon="icon" description="Lorem ipsum dolor sit amet."></PageHeader>
 
 		<div class="main-content">
-			<DataTable :data="tableData" :headers="headers" label="LIST OF PRICES" pagination="Showing 1 to 3 of 3 entries" :pages="pages" :buttons="buttons" :openModal="(key) => openModal(key)"/>
+			<DataTable :data="tableData" :headers="headers" label="LIST OF PRICES" pagination="Showing 1 to 3 of 3 entries" :pages="pages" :selectedBtns="selectedBtns" :buttons="buttons" :openModal="(key) => openModal(key)"/>
 		</div>
 
 		<NewPrice v-if="modal1" :close="() => {closeModal(0)}" />
@@ -41,13 +41,15 @@
 				pages: [1],
 				buttons: [
 					{name: 'New', icon: NewIcon, type: 'blue'},
+				],
+				selectedBtns: [
 					{name: 'Edit Price', icon: BrushIcon, type: 'blue'},
 					{name: 'Archive Price', icon: LockIcon, type: 'yellow'}
 				],
-				headers: ['Plan', 'Details'],
+				headers: [{label: 'Plan', width: '242px'}, {label: 'Details', width: '822px'}],
 				tableData: [
 					{
-						imaged: {
+						plan: {
 							label: 'Renewal (6 months)',
 							sublabel: '$30.00 USD / month',
 							image: PricesPlaceholder
@@ -59,7 +61,7 @@
 						}
 					},
 					{
-						imaged: {
+						plan: {
 							label: 'Renewal (12 months)',
 							sublabel: '$25.00 USD / month',
 							image: PricesPlaceholder
@@ -71,7 +73,7 @@
 						}
 					},
 					{
-						imaged: {
+						plan: {
 							label: 'Lifetime',
 							sublabel: '$1,000.00 USD',
 							image: PricesPlaceholder
@@ -89,15 +91,15 @@
 		methods: {
 			openModal(key){
 				switch (key) {
-					case 0:
+					case 'New':
 						this.modal1 = true;
 						break;
 
-					case 1:
+					case 'Edit Price':
 						this.modal2= true;
 						break;
 
-					case 2:
+					case 'Archive Price':
 						this.modal3 = true;
 						break;
 

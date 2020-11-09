@@ -3,10 +3,10 @@
 		<PageHeader title="Management" :icon="icon" description="Lorem ipsum dolor sit amet."></PageHeader>
 
 		<div class="main-content">
-			<Stats :stats="stats" />
+			<Stats class="managment-stats" :stats="stats" />
 
-			<DataTable :data="tableData2" :headers="headers2" label="STAFF" pagination="Showing 1 to 10 of 11 entries" :pages="pages" :buttons="buttons" :openModal="(key) => openModal(key)" />
-			<DataTable :data="tableData" :headers="headers" label="Product" pagination="Showing 1 to 4 of 4 entries" :pages="pages2" :buttons="buttons" :openModal="(key) => openModal(key)" />
+			<DataTable :data="tableData2" :headers="headers2" label="SERVICES" pagination="Showing 1 to 10 of 11 entries" :pages="pages" :selectedBtns="selectedBtns" :buttons="buttons" :openModal="(key) => openModal(key)" />
+			<DataTable :data="tableData" :headers="headers" label="STAFF" pagination="Showing 1 to 4 of 4 entries" :pages="pages2" :selectedBtns="selectedBtns2" :buttons="buttons" :openModal="(key) => openModal(key)" />
 			
 		</div>
 
@@ -53,7 +53,13 @@
 				pages2: [1, 2],
 				buttons: [
 					{name: 'New', icon: NewIcon, type: 'blue'},
+				],
+				selectedBtns: [
 					{name: 'Edit Service', icon: BrushIcon, type: 'blue'},
+					{name: 'Delete', icon: RemoveIcon, type: 'red'}
+				],
+				selectedBtns2: [
+					{name: 'Edit Staff', icon: BrushIcon, type: 'blue'},
 					{name: 'Delete', icon: RemoveIcon, type: 'red'}
 				],
 				stats: [
@@ -79,11 +85,11 @@
 						compareStatus: 1
 					}
 				],
-				headers: ['Employee', 'Type', 'Joined', 'Payment'],
-				headers2: ['Product', 'Type', 'Created', 'Renewal'],
+				headers: [{label: 'Employee', width: '480px'}, {label: 'Type', width: '210px'}, {label: 'Joined', width: '210px'}, {label: 'Payment', width: '210px'}],
+				headers2: [{label: 'Product', width: '434px'}, {label: 'Type', width: '210px'}, {label: 'Created', width: '210px'}, {label: 'Renewal', wisth: '210px'}],
 				tableData: [
 					{
-						imaged: {
+						employee: {
 							label: 'Jon Doe#0001',
 							sublabel: 'Sitelist and raffle provider',
 							image: UserAvatar1
@@ -92,7 +98,7 @@
 							label: '$150.00 USD / month',
 							sublabel: 'Recurring payment'
 						},
-						plan: {
+						plаn: {
 							label: 'September 21st 2020',
 							sublabel: '16:22:31 PM'
 						},
@@ -102,7 +108,7 @@
 						}
 					},
 					{
-						imaged: {
+						employee: {
 							label: 'Admin#0069',
 							sublabel: 'Administration, moderation and maintenance',
 							image: UserAvatar2
@@ -111,7 +117,7 @@
 							label: '$150.00 USD / month',
 							sublabel: 'Recurring payment'
 						},
-						plan: {
+						plаn: {
 							label: 'September 21st 2020',
 							sublabel: '16:22:31 PM'
 						},
@@ -121,7 +127,7 @@
 						}
 					},
 					{
-						imaged: {
+						employee: {
 							label: 'Noheadhunt#0001',
 							sublabel: 'Administration, moderation and maintenance',
 							image: UserAvatar3
@@ -130,7 +136,7 @@
 							label: '$150.00 USD / month',
 							sublabel: 'Recurring payment'
 						},
-						plan: {
+						plаn: {
 							label: 'September 21st 2020',
 							sublabel: '16:22:31 PM'
 						},
@@ -140,7 +146,7 @@
 						}
 					},
 					{
-						imaged: {
+						employee: {
 							label: 'Jon Doe#0001',
 							sublabel: 'Sitelist and raffle provider',
 							image: UserAvatar1
@@ -149,7 +155,7 @@
 							label: '$150.00 USD / month',
 							sublabel: 'Recurring payment'
 						},
-						plan: {
+						plаn: {
 							label: 'September 21st 2020',
 							sublabel: '16:22:31 PM'
 						},
@@ -159,7 +165,7 @@
 						}
 					},
 					{
-						imaged: {
+						employee: {
 							label: 'Admin#0069',
 							sublabel: 'Administration, moderation and maintenance',
 							image: UserAvatar2
@@ -168,7 +174,7 @@
 							label: '$150.00 USD / month',
 							sublabel: 'Recurring payment'
 						},
-						plan: {
+						plаn: {
 							label: 'September 21st 2020',
 							sublabel: '16:22:31 PM'
 						},
@@ -178,7 +184,7 @@
 						}
 					},
 					{
-						imaged: {
+						employee: {
 							label: 'Noheadhunt#0001',
 							sublabel: 'Administration, moderation and maintenance',
 							image: UserAvatar3
@@ -187,7 +193,7 @@
 							label: '$150.00 USD / month',
 							sublabel: 'Recurring payment'
 						},
-						plan: {
+						plаn: {
 							label: 'September 21st 2020',
 							sublabel: '16:22:31 PM'
 						},
@@ -197,7 +203,7 @@
 						}
 					},
 					{
-						imaged: {
+						employee: {
 							label: 'Jon Doe#0001',
 							sublabel: 'Sitelist and raffle provider',
 							image: UserAvatar1
@@ -206,7 +212,7 @@
 							label: '$150.00 USD / month',
 							sublabel: 'Recurring payment'
 						},
-						plan: {
+						plаn: {
 							label: 'September 21st 2020',
 							sublabel: '16:22:31 PM'
 						},
@@ -216,7 +222,7 @@
 						}
 					},
 					{
-						imaged: {
+						employee: {
 							label: 'Admin#0069',
 							sublabel: 'Administration, moderation and maintenance',
 							image: UserAvatar2
@@ -225,7 +231,7 @@
 							label: '$150.00 USD / month',
 							sublabel: 'Recurring payment'
 						},
-						plan: {
+						plаn: {
 							label: 'September 21st 2020',
 							sublabel: '16:22:31 PM'
 						},
@@ -235,7 +241,7 @@
 						}
 					},
 					{
-						imaged: {
+						employee: {
 							label: 'Noheadhunt#0001',
 							sublabel: 'Administration, moderation and maintenance',
 							image: UserAvatar3
@@ -244,7 +250,7 @@
 							label: '$150.00 USD / month',
 							sublabel: 'Recurring payment'
 						},
-						plan: {
+						plаn: {
 							label: 'September 21st 2020',
 							sublabel: '16:22:31 PM'
 						},
@@ -254,7 +260,7 @@
 						}
 					},
 					{
-						imaged: {
+						employee: {
 							label: 'Jon Doe#0001',
 							sublabel: 'Sitelist and raffle provider',
 							image: UserAvatar1
@@ -263,7 +269,7 @@
 							label: '$150.00 USD / month',
 							sublabel: 'Recurring payment'
 						},
-						plan: {
+						plаn: {
 							label: 'September 21st 2020',
 							sublabel: '16:22:31 PM'
 						},
@@ -273,7 +279,7 @@
 						}
 					},
 					{
-						imaged: {
+						employee: {
 							label: 'Admin#0069',
 							sublabel: 'Administration, moderation and maintenance',
 							image: UserAvatar2
@@ -282,7 +288,7 @@
 							label: '$150.00 USD / month',
 							sublabel: 'Recurring payment'
 						},
-						plan: {
+						plаn: {
 							label: 'September 21st 2020',
 							sublabel: '16:22:31 PM'
 						},
@@ -292,7 +298,7 @@
 						}
 					},
 					{
-						imaged: {
+						employee: {
 							label: 'Noheadhunt#0001',
 							sublabel: 'Administration, moderation and maintenance',
 							image: UserAvatar3
@@ -301,7 +307,7 @@
 							label: '$150.00 USD / month',
 							sublabel: 'Recurring payment'
 						},
-						plan: {
+						plаn: {
 							label: 'September 21st 2020',
 							sublabel: '16:22:31 PM'
 						},
@@ -313,7 +319,7 @@
 				],
 				tableData2: [
 					{
-						imaged: {
+						product: {
 							label: 'Affinity Dashboard (Professional)',
 							sublabel: 'Dashboard provider',
 							image: CompanyLogo1,
@@ -336,7 +342,7 @@
 						},
 					},
 					{
-						imaged: {
+						product: {
 							label: 'Cilly GFX',
 							sublabel: 'UI design for Autofill tool',
 							image: CompanyLogo2,
@@ -355,7 +361,7 @@
 						renewal: {},
 					},
 					{
-						imaged: {
+						product: {
 							label: 'AXIOM Technologies',
 							sublabel: 'Proxies and servers for free slots for members',
 							image: CompanyLogo3,
@@ -374,7 +380,7 @@
 						renewal: {},
 					},
 					{
-						imaged: {
+						product: {
 							label: 'GUAP Monitors',
 							sublabel: 'Monitor services for Shopify and Footsites',
 							image: CompanyLogo4,
@@ -403,7 +409,7 @@
 		methods: {
 			openModal(key){
 				switch (key) {
-					case 0:
+					case 'New':
 						this.modal1 = true;
 						break;
 

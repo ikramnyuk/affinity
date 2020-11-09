@@ -14,15 +14,21 @@
 					<img src="../../assets/notification.svg" alt="notification_icon">
 				</div>
 			</div>
-			<div class="divider"></div>
+			<div class="divider desktop-divider"></div>
 			<div class="user">
 				<div class="avatar">
 					<img src="../../assets/avatar.svg" alt="avatar">
 				</div>
 				<div class="info">
-					<div class="name">UserName#0001</div>
+					<div class="name">Cillysen#0001</div>
 					<div class="role">Administrator</div>
 				</div>
+			</div>
+
+			<div class="divider menu-divider"></div>
+
+			<div class="menu" @click="openMenu">
+				<img src="../../assets/menu.svg" alt="svg">
 			</div>
 		</div>
 	</div>
@@ -33,6 +39,12 @@
 
 	export default {
 		name: 'TopBar',
-		components: {}
+		components: {},
+
+		methods: {
+			openMenu(){
+				this.$store.dispatch('Common/setMenu', true);
+			}
+		}
 	}
 </script>

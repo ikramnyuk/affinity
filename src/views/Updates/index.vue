@@ -33,7 +33,7 @@
 							{
 								title: 'CUSTOMER DASHBOARD',
 								class: 'green',
-								info: 'Added toast notifications and removed ugly alerts'
+								info: 'Bug fixes'
 							}
 						]
 					},
@@ -50,7 +50,7 @@
 							{
 								title: 'ADMIN PANEL',
 								class: 'blue',
-								info: 'Added REST API for authentication of software'
+								info: 'Bug fixes'
 							}
 						]
 					},
@@ -62,7 +62,7 @@
 							{
 								title: 'API',
 								class: 'yellow',
-								info: 'Added REST API for authentication of software'
+								info: 'Bug fixes'
 							}
 						]
 					},
@@ -74,7 +74,7 @@
 							{
 								title: 'CUSTOMER DASHBOARD',
 								class: 'green',
-								info: 'Added toast notifications and removed ugly alerts'
+								info: 'Bug fixes'
 							}
 						]
 					},
@@ -91,7 +91,7 @@
 							{
 								title: 'ADMIN PANEL',
 								class: 'blue',
-								info: 'Added REST API for authentication of software'
+								info: 'Bug fixes'
 							}
 						]
 					},
@@ -103,11 +103,11 @@
 							{
 								title: 'API',
 								class: 'yellow',
-								info: 'Added REST API for authentication of software'
+								info: 'Bug fixes'
 							}
 						]
 					},
-										{
+					{
 						title: 'Version 1.11.1',
 						subtitle: 'Sep 17ᵗʰ',
 						itemText: '',
@@ -115,7 +115,7 @@
 							{
 								title: 'CUSTOMER DASHBOARD',
 								class: 'green',
-								info: 'Added toast notifications and removed ugly alerts'
+								info: 'Bug fixes'
 							}
 						]
 					},
@@ -132,34 +132,10 @@
 							{
 								title: 'ADMIN PANEL',
 								class: 'blue',
-								info: 'Added REST API for authentication of software'
+								info: 'Bug fixes'
 							}
 						]
-					},
-					{
-						title: 'Version 1.11.1',
-						subtitle: 'Sep 17ᵗʰ',
-						itemText: '',
-						items: [
-							{
-								title: 'API',
-								class: 'yellow',
-								info: 'Added REST API for authentication of software'
-							}
-						]
-					},
-					{
-						title: 'Version 1.11.1',
-						subtitle: 'Sep 17ᵗʰ',
-						itemText: '',
-						items: [
-							{
-								title: 'API',
-								class: 'yellow',
-								info: 'Added REST API for authentication of software'
-							}
-						]
-					},
+					}
 				],
 
 				stepper2: [

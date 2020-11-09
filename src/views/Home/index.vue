@@ -5,8 +5,8 @@
 		<div class="main-content">
 			<Stats :stats="stats" />
 
-			<DataTable :data="tableData" :headers="headers" label="LIVE RELEASES" pagination="Showing 1 to 3 of 3 entries" :pages="pages" :buttons="buttons" />
-			<DataTable :data="tableData2" :headers="headers2" label="SERVICES" pagination="Showing 1 to 4 of 4 entries" :pages="pages" :buttons="buttons" />
+			<DataTable :data="tableData" :headers="headers" label="LIVE RELEASES" pagination="Showing 1 to 3 of 3 entries" :pages="pages" :buttons="buttons" :selectedBtns="selectedBtns" />
+			<DataTable :data="tableData2" :headers="headers2" label="SERVICES" pagination="Showing 1 to 4 of 4 entries" :pages="pages" :buttons="buttons" :selectedBtns="selectedBtns" />
 		</div>
 	</div>
 </template>
@@ -41,6 +41,9 @@
 				buttons: [
 					{name: 'New', icon: NewIcon, type: 'blue'}
 				],
+				selectedBtns: [
+					{name: 'New', icon: NewIcon, type: 'blue'}
+				],
 				stats: [
 					{
 						name: 'Gross volume',
@@ -64,8 +67,8 @@
 						compareStatus: 1
 					}
 				],
-				headers: ['Release', 'Plan', 'Created', 'Link', 'Stock'],
-				headers2: ['Product', 'Type', 'Created', 'Renewal'],
+				headers: [{label: 'Release', width: '214px'}, {label: 'Plаn', width: '180px'}, {label: 'Created', width: '150px'}, {label: 'Link', width: '320px'}, {label: 'Stock', width: '200px'}],
+				headers2: [{label: 'Product', width: '434px'}, {label: 'Type', width: '210xp'}, {label: 'Created', width: '210xp'}, {label: 'Renewal', width: '210xp'}],
 				tableData: [
 					{
 						release: {
@@ -73,7 +76,7 @@
 							sublabel: 'Cart hold enabled',
 							sort: true
 						},
-						plan: {
+						plаn: {
 							label: 'Renewal (6 months)',
 							sublabel: '$30.00 USD / month',
 							sort: true
@@ -101,7 +104,7 @@
 							sublabel: 'Cart hold enabled',
 							sort: true
 						},
-						plan: {
+						plаn: {
 							label: 'Renewal (6 months)',
 							sublabel: '$30.00 USD / month',
 							sort: true
@@ -129,7 +132,7 @@
 							sublabel: 'Cart hold enabled',
 							sort: true
 						},
-						plan: {
+						plаn: {
 							label: 'Renewal (6 months)',
 							sublabel: '$30.00 USD / month',
 							sort: true
@@ -154,7 +157,7 @@
 				],
 				tableData2: [
 					{
-						imaged: {
+						product: {
 							label: 'Affinity Dashboard (Professional)',
 							sublabel: 'Dashboard provider',
 							image: CompanyLogo1,
@@ -177,7 +180,7 @@
 						},
 					},
 					{
-						imaged: {
+						product: {
 							label: 'Cilly GFX',
 							sublabel: 'UI design for Autofill tool',
 							image: CompanyLogo2,
@@ -196,7 +199,7 @@
 						renewal: {},
 					},
 					{
-						imaged: {
+						product: {
 							label: 'AXIOM Technologies',
 							sublabel: 'Proxies and servers for free slots for members',
 							image: CompanyLogo3,
@@ -215,7 +218,7 @@
 						renewal: {},
 					},
 					{
-						imaged: {
+						product: {
 							label: 'GUAP Monitors',
 							sublabel: 'Monitor services for Shopify and Footsites',
 							image: CompanyLogo4,

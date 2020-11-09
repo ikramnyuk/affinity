@@ -3,6 +3,7 @@
 		<TopBar />
 		
 		<div class="page-wraper">
+			<div @click="openMenu" v-if="menu" class="menu-opened"></div>
 			<NavBar />
 
 			<div class="page-container">
@@ -18,6 +19,18 @@
 
 	export default {
 		name: 'Layout',
-		components: { NavBar, TopBar }
+		components: { NavBar, TopBar },
+
+		computed: {
+			menu(){
+				return this.$store.getters['Common/getMenu'];
+			},
+		},
+
+		methods: {
+			openMenu(){
+				this.$store.dispatch('Common/setMenu', false);
+			}
+		}
 	}
 </script>

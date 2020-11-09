@@ -1,5 +1,5 @@
 <template>
-	<nav class="navbar" @click="count++" v-if="count">
+	<nav @click="close()" :class="menu ? 'navbar opened' : 'navbar'" v-if="count">
 		<div class="section">
 			<h2 class="section-label">MENU</h2>
 			<div class="nav-list">
@@ -73,6 +73,19 @@
 		data: () => {
 			return {
 				count: 1
+			}
+		},
+
+		computed: {
+			menu(){
+				return this.$store.getters['Common/getMenu'];
+			},
+		},
+
+		methods: {
+			close(){
+				this.count++;
+				this.$store.dispatch('Common/setMenu', false);
 			}
 		}
 	}

@@ -6,8 +6,14 @@
             <div class="actions" v-if="pages">
                 <div class="pagination">
                     <span>Show</span>
-                    <input type="number" value="10">
-                    <span>latest updates</span>
+                    <div class="number-input">
+                        <input v-model="rowPerPage" type="text">
+                        <div class="number-btns">
+                            <span class="up" @click="upPages"></span>
+                            <span class="down" @click="downPages"></span>
+                        </div>
+                    </div>
+                    <span>entries</span>
                 </div>
             </div>
         </div>
@@ -48,7 +54,8 @@
 
         data: () => {
             return {
-                icon: StepIcon
+                icon: StepIcon,
+                rowPerPage: 10
             }
         },
 

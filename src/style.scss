@@ -2,7 +2,16 @@
 
 @font-face {
 	font-family: 'SegoeUI';
-	src: url('./fonts/9404.ttf') format('truetype');
+    src: url('./fonts/segoeui.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: 'SegoeUI';
+    src: url('./fonts/segoeuib.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
 }
 
 *{
@@ -20,20 +29,47 @@ a{
     text-decoration: none;
 }
 
+.v-application p{
+    margin-bottom: 0!important;
+}
+
+@media(max-width: 1300px){
+    .commont-wraper{
+        overflow-x: hidden;
+    }
+}
+
 .page-wraper{
     display: flex;
 
     .page-container{
         width: calc(100% - 280px);
         height: 100vh;
-        padding-top: 60px;
         background-color: $bg_blue_dark;
+
+        @media(max-width: 1300px){
+            width: 100%;
+        }
+    }
+
+    .menu-opened{
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .5);
+        z-index: 89;
     }
 }
 
 .main-content{
     padding: 0 30px 30px;
     background-color: $bg_blue_dark;
+
+    @media(max-width: 1200px){
+        padding: 0 20px 20px;
+    }
 }
 
 .custom-checkbox{
@@ -60,10 +96,75 @@ a{
     border-color: none!important;
 }
 
+.pagination{
+    display: flex;
+    align-items: center;
+
+    span{
+        font-size: 14px;
+        font-weight: normal;
+        color: $font_dark_gray;
+        opacity: .6;
+    }
+
+    .number-input{
+        position: relative;
+        color: $font_dark_gray;
+        font-size: 14px;
+
+        input{
+            width: 60px;
+            height: 29px;
+            padding-left: 8px;
+            margin-left: 5px;
+            margin-right: 4px;
+            line-height: 14px;
+            border-radius: 3px;
+            border: solid 1px $border_grey_dark;
+
+            @media(max-width: 1200px){
+                width: 50px;
+                height: 24px;
+            }
+        }
+
+        .number-btns{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 20px;
+            
+            @media(max-width: 1200px){
+                right: 12px;
+            }
+
+            .up{
+                display: block;
+                width: 6px;
+                height: 5px;
+                background-image: url('./assets/number-up.svg');
+                background-position: top center;
+                background-size: cover;
+                cursor: pointer;
+            }
+
+            .down{
+                display: block;
+                width: 6px;
+                height: 5px;
+                background-image: url('./assets/number-up.svg');
+                background-position: bottom center;
+                background-size: cover;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
 .btn{
     height: 30px;
     margin-left: 20px;
-    padding: 0 14px;
+    padding: 0 14px 0 12px;
     border-radius: 3px;
     cursor: pointer;
     font-size: 14px;
@@ -75,12 +176,12 @@ a{
     }
 
     img{
-        width: 12px;
-        height: 12px;
+        width: 16px;
     }
 
     span{
-        margin-left: 6px;
+        margin-left: 4px;
+        line-height: 14px;
     }
 
     &.blue-color{

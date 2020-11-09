@@ -61,12 +61,12 @@
             background-color: $bg_white_light;
 
             p{
-                margin-bottom: 25px;
+                margin-bottom: 20px!important;
                 font-size: 14px;
                 color: $font_dark_gray;
 
                 &:last-child{
-                    margin-bottom: 16px;
+                    margin-bottom: 16px!important;
                 }
             }
         }
@@ -139,7 +139,7 @@
                 }
 
                 .label{
-                    margin-bottom: 5px;
+                    margin-bottom: 9px;
                     color: $font_dark_gray;
                     font-size: 12px;
                 }
