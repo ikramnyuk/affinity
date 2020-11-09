@@ -38,6 +38,11 @@
             display: block;
             margin-top: 14.5px;
 
+            &.disabled{
+                cursor: pointer;
+                opacity: .5;
+            }
+
             img{
                 width: 22px;
                 height: 22px;

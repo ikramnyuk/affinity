@@ -49,10 +49,10 @@
                             <div v-if="item !== 'Stock'">
                                 <span>{{ item.label }}</span>
                                 <div class="sort">
-                                    <!-- <span v-if="sort.indexOf(item + '_up') !== -1" @click="sortTable(null, null, item + '_up')"><img src="../../assets/sort-up.svg" alt="sort_up"></span> -->
-                                    <span v-if="sort.indexOf(item + '_up') === -1" @click="sortTable(item.label, false)"><img src="../../assets/sort-up-disabled.svg" alt="sort_up"></span>
-                                    <!-- <span v-if="sort.indexOf(item + '_down') !== -1" @click="sortTable(null, null, null, null, item + '_down')"><img src="../../assets/sort-down.svg" alt="sort_down"></span> -->
-                                    <span v-if="sort.indexOf(item + '_down') === -1" @click="sortTable(item.label, true)"><img src="../../assets/sort-down-disabled.svg" alt="sort_down"></span>
+                                    <span v-if="sort.indexOf(item.label + '_up') !== -1" @click="sortTable(null, null, item.label + '_up')"><img src="../../assets/sort-up.svg" alt="sort_up"></span>
+                                    <span v-if="sort.indexOf(item.label + '_up') === -1" @click="sortTable(item.label, false)"><img src="../../assets/sort-up-disabled.svg" alt="sort_up"></span>
+                                    <span v-if="sort.indexOf(item.label + '_down') !== -1" @click="sortTable(null, null, item.label + '_down')"><img src="../../assets/sort-down.svg" alt="sort_down"></span>
+                                    <span v-if="sort.indexOf(item.label + '_down') === -1" @click="sortTable(item.label, true)"><img src="../../assets/sort-down-disabled.svg" alt="sort_down"></span>
                                 </div>
                             </div>
                         </th>
@@ -152,7 +152,7 @@
                 checkboxes: [],
                 allCheck: false,
                 sortedData: [],
-                sort: []
+                sort: [],
             }
         },
 
@@ -164,10 +164,32 @@
         },
 
         methods: {
-            sortTable(header, reverse) {
+            sortTable(header, reverse, sortIcon) {
                 if(header){
                     this.sortedData.sort(this.sortBy(header, reverse));
 
+                    if(reverse){
+                        
+                        let index = this.sort.findIndex((item) => {
+                            return item === header + '_up';
+                        });
+                        console.log(index);
+                        this.sort.splice(index, 1);
+
+                        this.sort.push(header + '_down');
+
+                    }else{
+                        
+
+                        let index = this.sort.findIndex((item) => {
+                            return item === header + '_down';
+                        });
+
+                        this.sort.splice(index, 1);
+
+                        this.sort.push(header + '_up');
+                    }
+                    
                 }else{
                     let data = [];
                     this.data.forEach((item) => {
@@ -175,6 +197,14 @@
                     });
 
                     this.sortedData = data;
+
+                    if(sortIcon){
+                        let index = this.sort.findIndex((item) => {
+                            return item === sortIcon;
+                        });
+
+                        this.sort.splice(index, 1);
+                    }
                 }
             },
 

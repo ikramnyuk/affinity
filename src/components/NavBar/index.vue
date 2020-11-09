@@ -39,10 +39,10 @@
 					<img v-else src="../../assets/managment.svg" alt="managment">
 					<span>Management</span>
 				</router-link>
-				<router-link to="/calendar" class="nav-item">
+				<span to="/calendar" class="nav-item disabled">
 					<img src="../../assets/calendar.svg" alt="calendar">
 					<span>Calendar</span>
-				</router-link>
+				</span>
 			</div>
 		</div>
 
