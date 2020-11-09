@@ -5,6 +5,58 @@
     padding: 14px 25px 30px;
     background-color: $bg_white_light;
 
+    .user{
+        display: none;
+
+        @media(max-width: 768px){
+            display: flex!important;
+            align-items: center;
+            margin-bottom: 20px;
+            
+            @media(max-width: 1300px){
+                margin-right: 20px;
+            }
+
+            @media(max-width: 768px){
+                display: none;
+            }
+
+            .avatar img{
+                width: 40px;
+                height: 40px;
+                object-fit: cover;
+            }
+
+            .info{
+                margin-left: 10px;
+
+                .name{
+                    min-width: 106px;
+                    position: relative;
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: $font_dark_gray;
+
+                    &:after{
+                        content: '';
+                        width: 16px;
+                        height: 16px;
+                        position: absolute;
+                        top: 3px;
+                        right: -4px;
+                        background-image: url('../../assets/menu-arro-down.svg');
+                    }
+                }
+
+                .role{
+                    font-size: 14px;
+                    font-weight: normal;
+                    color: $font_dark_gray;
+                }
+            }
+        }
+    }
+
     @media(max-width: 1300px){
         height: 100vh;
         position: fixed;

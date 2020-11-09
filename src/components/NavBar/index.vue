@@ -1,5 +1,15 @@
 <template>
 	<nav @click="close()" :class="menu ? 'navbar opened' : 'navbar'" v-if="count">
+		<div class="user">
+			<div class="avatar">
+				<img src="../../assets/avatar.svg" alt="avatar">
+			</div>
+			<div class="info">
+				<div class="name">Cillysen#0001</div>
+				<div class="role">Administrator</div>
+			</div>
+		</div>
+
 		<div class="section">
 			<h2 class="section-label">MENU</h2>
 			<div class="nav-list">
