@@ -12,6 +12,7 @@
 							<div class="title">
 								<span>Logo</span>
 								<img src="../../assets/info.svg" alt="info">
+								<div class="custom-tooltip">Some info about the field</div>
 							</div>
 
 							<input type="text" placeholder="Enter logo URL...">
@@ -21,6 +22,7 @@
 							<div class="title">
 								<span>Background</span>
 								<img src="../../assets/info.svg" alt="info">
+								<div class="custom-tooltip">Some info about the field</div>
 							</div>
 
 							<input type="text" placeholder="Enter background URL...">
@@ -30,6 +32,7 @@
 							<div class="title">
 								<span>Motto</span>
 								<img src="../../assets/info.svg" alt="info">
+								<div class="custom-tooltip">Some info about the field</div>
 							</div>
 
 							<input type="text" placeholder="Enter motto URL...">
@@ -39,6 +42,7 @@
 							<div class="title">
 								<span>Color</span>
 								<img src="../../assets/info.svg" alt="info">
+								<div class="custom-tooltip">Some info about the field</div>
 							</div>
 
 							<input type="text" placeholder="Enter color hex code...">
@@ -64,6 +68,7 @@
 							<div class="title">
 								<span>Subject</span>
 								<img src="../../assets/info.svg" alt="info">
+								<div class="custom-tooltip">Some info about the field</div>
 							</div>
 
 							<input type="text" placeholder="Enter email subject...">
@@ -73,6 +78,7 @@
 							<div class="title">
 								<span>Content</span>
 								<img src="../../assets/info.svg" alt="info">
+								<div class="custom-tooltip">Some info about the field</div>
 							</div>
 
 							<textarea type="text" placeholder="Enter email content…"></textarea>
@@ -88,6 +94,7 @@
 							<div class="title">
 								<span>Stripe publishable key</span>
 								<img src="../../assets/info.svg" alt="info">
+								<div class="custom-tooltip">Some info about the field</div>
 							</div>
 
 							<input type="text" placeholder="Enter Stripe publishable key...">
@@ -103,6 +110,7 @@
 							<div class="title">
 								<span>Footer text</span>
 								<img src="../../assets/info.svg" alt="info">
+								<div class="custom-tooltip">Some info about the field</div>
 							</div>
 
 							<input type="text" placeholder="Enter footer text...">
@@ -118,6 +126,7 @@
 							<div class="title">
 								<span>Discord success channel</span>
 								<img src="../../assets/info.svg" alt="info">
+								<div class="custom-tooltip">Some info about the field</div>
 							</div>
 
 							<input type="text" placeholder="Enter Discord success channel...">
@@ -137,6 +146,7 @@
 							<div class="title">
 								<span>Logo</span>
 								<img src="../../assets/info.svg" alt="info">
+								<div class="custom-tooltip">Some info about the field</div>
 							</div>
 
 							<input type="text" placeholder="Enter logo URL...">
@@ -146,6 +156,7 @@
 							<div class="title">
 								<span>Background</span>
 								<img src="../../assets/info.svg" alt="info">
+								<div class="custom-tooltip">Some info about the field</div>
 							</div>
 
 							<input type="text" placeholder="Enter background URL...">
@@ -155,6 +166,7 @@
 							<div class="title">
 								<span>Motto</span>
 								<img src="../../assets/info.svg" alt="info">
+								<div class="custom-tooltip">Some info about the field</div>
 							</div>
 
 							<input type="text" placeholder="Enter motto URL...">
@@ -164,6 +176,7 @@
 							<div class="title">
 								<span>Color</span>
 								<img src="../../assets/info.svg" alt="info">
+								<div class="custom-tooltip">Some info about the field</div>
 							</div>
 
 							<input type="text" placeholder="Enter color hex code...">
@@ -181,6 +194,7 @@
 							<div class="title">
 								<span>Subject</span>
 								<img src="../../assets/info.svg" alt="info">
+								<div class="custom-tooltip">Some info about the field</div>
 							</div>
 
 							<input type="text" placeholder="Enter email subject...">
@@ -190,6 +204,7 @@
 							<div class="title">
 								<span>Content</span>
 								<img src="../../assets/info.svg" alt="info">
+								<div class="custom-tooltip">Some info about the field</div>
 							</div>
 
 							<textarea type="text" placeholder="Enter email content…"></textarea>
@@ -205,6 +220,7 @@
 							<div class="title">
 								<span>Stripe publishable key</span>
 								<img src="../../assets/info.svg" alt="info">
+								<div class="custom-tooltip">Some info about the field</div>
 							</div>
 
 							<input type="text" placeholder="Enter Stripe publishable key...">
@@ -220,6 +236,7 @@
 							<div class="title">
 								<span>Footer text</span>
 								<img src="../../assets/info.svg" alt="info">
+								<div class="custom-tooltip">Some info about the field</div>
 							</div>
 
 							<input type="text" placeholder="Enter footer text...">
@@ -235,6 +252,7 @@
 							<div class="title">
 								<span>Discord success channel</span>
 								<img src="../../assets/info.svg" alt="info">
+								<div class="custom-tooltip">Some info about the field</div>
 							</div>
 
 							<input type="text" placeholder="Enter Discord success channel...">

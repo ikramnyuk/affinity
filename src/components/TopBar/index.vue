@@ -20,8 +20,12 @@
 					<img src="../../assets/avatar.svg" alt="avatar">
 				</div>
 				<div class="info">
-					<div class="name">Cillysen#0001</div>
+					<div @click="openLogout" class="name" id="button">Cillysen#0001</div>
 					<div class="role">Administrator</div>
+
+					<div v-if="logout" class="user-options" id="popup">
+						<span>Logout</span>
+					</div>
 				</div>
 			</div>
 
@@ -41,7 +45,30 @@
 		name: 'TopBar',
 		components: {},
 
+		data: () => {
+			return {
+				logout: false
+			}
+		},
+
+		mounted(){
+			let button = document.getElementById('button'),
+				self = this;
+
+			document.addEventListener('click', function(event) {
+				let isClickButton = button.contains(event.target);
+
+				if (!isClickButton) {
+					self.logout = false;
+				}
+			});
+		},
+
 		methods: {
+			openLogout(){
+				this.logout = true;
+			},
+
 			openMenu(){
 				this.$store.dispatch('Common/setMenu', true);
 			}

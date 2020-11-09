@@ -61,6 +61,7 @@
                     }
 
                     .title{
+                        position: relative;
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
@@ -76,6 +77,32 @@
                         img{
                             width: 12px;
                             height: 12px;
+
+                            &:hover + .custom-tooltip{
+                                top: 0;
+                                opacity: 1;
+                            }
+                        }
+
+                        .custom-tooltip{
+                            position: absolute;
+                            top: -30px;
+                            right: 0;
+                            font-size: 12px;
+                            font-weight: normal;
+                            color: $font_dark_gray;
+                            background-color: $bg_white_light;
+                            border-radius: 3px;
+                            padding: 8px 10px;
+                            line-height: 10px;
+                            box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.1);
+                            opacity: 0;
+                            transition: .3s;
+
+                            &:hover{
+                                opacity: 1;
+                                top: 0;
+                            }
                         }
                     }
 

@@ -5,7 +5,7 @@
 		<div class="main-content">
 			<Stats :stats="stats" />
 
-			<DataTable :data="tableData" :headers="headers" label="LIVE RELEASES" pagination="Showing 1 to 3 of 3 entries" :pages="pages" :buttons="buttons" :selectedBtns="selectedBtns" />
+			<DataTable :data="tableData" :headers="headers" label="LIVE RELEASES" pagination="Showing 1 to 3 of 3 entries" :pages="pages" :buttons="buttons" :selectedBtns="selectedBtns2" />
 			<DataTable :data="tableData2" :headers="headers2" label="SERVICES" pagination="Showing 1 to 4 of 4 entries" :pages="pages" :buttons="buttons" :selectedBtns="selectedBtns" />
 		</div>
 	</div>
@@ -27,6 +27,9 @@
 	import StatsIcons2 from '../../assets/diamond.svg';
 	import StatsIcons3 from '../../assets/key.svg';
 
+	import BrushIcon from '../../assets/brush.svg';
+	import LockIcon from '../../assets/lock.svg';
+	import RemoveIcon from '../../assets/remove.svg';
 	import NewIcon from '../../assets/add.svg';
 
 	import './style.scss';
@@ -41,8 +44,17 @@
 				buttons: [
 					{name: 'New', icon: NewIcon, type: 'blue'}
 				],
-				selectedBtns: [
+				buttons2: [
 					{name: 'New', icon: NewIcon, type: 'blue'}
+				],
+				selectedBtns: [
+					{name: 'Edit Service', icon: BrushIcon, type: 'blue'},
+					{name: 'Delete', icon: RemoveIcon, type: 'red'}
+				],
+				selectedBtns2: [
+					{name: 'Edit Release', icon: BrushIcon, type: 'blue'},
+					{name: 'Pull Stock', icon: LockIcon, type: 'yellow'},
+					{name: 'Delete', icon: RemoveIcon, type: 'red'}
 				],
 				stats: [
 					{
